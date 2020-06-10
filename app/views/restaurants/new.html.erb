@@ -13,5 +13,5 @@
       "french",
       "belgian"] %>
   <%= restaurant.button :submit, class: "btn-primary" %>
-  <%= restaurant.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+  <%= link_to "Cancel", restaurants_path, class: "btn btn-secondary" %>
 <% end %>
