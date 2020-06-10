@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 10.times do
   cat = ["chinese", "italian", "japanese", "french", "belgian"]
   restaurant = Restaurant.create(name: Faker::Restaurant.name, address: Faker::Address.street_address, phone_number: Faker::PhoneNumber.phone_number, category: cat[rand(0..4)])
+  rand(5..10).times do
+    rev = Review.create(content: Faker::Restaurant.review, rating: rand(0..5), restaurant_id: restaurant.id)
+  end
 end

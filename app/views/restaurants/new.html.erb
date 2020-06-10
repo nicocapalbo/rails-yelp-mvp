@@ -1,0 +1,17 @@
+<h2>Create new restaurant</h2>
+<br>
+<%= simple_form_for @restaurant do |restaurant| %>
+  <%= restaurant.error_notification %>
+  <%= restaurant.input :name %>
+  <%= restaurant.input :address %>
+  <%= restaurant.input :phone_number %>
+  <%= restaurant.input :category,
+    collection: [
+      "chinese",
+      "italian",
+      "japanse",
+      "french",
+      "belgian"] %>
+  <%= restaurant.button :submit, class: "btn-primary" %>
+  <%= restaurant.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+<% end %>
